@@ -1,7 +1,7 @@
 # Личный проект «YetiCave»
 
 * Студент: [Евгений Сухалинцев](https://up.htmlacademy.ru/php/10/user/847405).
-* Наставник: `Неизвестно`.
+* Наставник: [Антон Попов](https://htmlacademy.ru/profile/id78239).
 
 ---
 
