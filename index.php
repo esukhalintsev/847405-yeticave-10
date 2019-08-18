@@ -40,6 +40,15 @@ $goods = [[
       'price' => 5400,
       'url' => 'img/lot-6.jpg'
     ],];
+
+function cutPrice($price){
+   $price = ceil($price);
+	if ($price >= 1000) {
+		$price = number_format($price, 0, '.', ' ' );
+	}
+	$price .= ' <b class="rub">₽</b>';
+	return $price;
+};
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -114,7 +123,7 @@ $goods = [[
               <div class="lot__state">
                 <div class="lot__rate">
                   <span class="lot__amount">Стартовая цена</span>
-                  <span class="lot__cost"><?= $good['price']; ?></span>
+                  <span class="lot__cost"><?= cutPrice($good['price']); ?></span>
                 </div>
                 <div class="lot__timer timer">
                   12:23
@@ -131,8 +140,8 @@ $goods = [[
   <footer class="main-footer">
     <nav class="nav">
       <ul class="nav__list container">
-        <?php foreach($categories as $key => $category): ?>
-        <li class="promo__item promo__item--<?= $key; ?>">
+        <?php foreach($categories as $alias => $category): ?>
+        <li class="promo__item promo__item--<?= $alias; ?>">
           <a class="promo__link" href="pages/all-lots.html"><?= $category; ?></a>
         </li>
         <? endforeach; ?>
