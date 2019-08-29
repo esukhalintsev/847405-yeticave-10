@@ -20,6 +20,15 @@ function is_date_valid(string $date) : bool {
     return $dateTimeObj !== false && array_sum(date_get_last_errors()) === 0;
 }
 
+function cut_price($price){
+   $price = ceil($price);
+	if ($price >= 1000) {
+		$price = number_format($price, 0, '.', ' ' );
+	}
+	$price .= ' <b class="rub">₽</b>';
+	return $price;
+};
+
 /**
  * Создает подготовленное выражение на основе готового SQL запроса и переданных данных
  *
@@ -141,6 +150,16 @@ function include_template($name, array $data = []) {
     $result = ob_get_clean();
 
     return $result;
+}
+
+/**
+ * Функция очистки данных от тэгов
+ * @param string $num Очишаемая строка
+ * @return string Очишенная строка
+ */
+function clearStrDataTags($str) {
+    $text = strip_tags($str);
+    return $text;
 }
 
 
