@@ -15,7 +15,7 @@ $goods = [[
       'category' => $categories['boards'],
       'price' => 10999,
       'url' => 'img/lot-1.jpg',
-      'expiration' => '2019-10-18 18:00'
+      'expiration' => '2020-10-18'
     ],[
       'name' => 'DC Ply Mens 2016/2017 Snowboard',
       'category' => $categories['boards'],
@@ -45,5 +45,5 @@ $goods = [[
       'category' => $categories['other'],
       'price' => 5400,
       'url' => 'img/lot-6.jpg',
-      'expiration' => '2019-10-19'
+      'expiration' => '2020-10-19'
     ]];
