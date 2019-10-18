@@ -163,3 +163,15 @@ function clearStrDataTags($str) {
 }
 
 
+function calculate_time($time) {
+    $current_time = time();
+    $future_time = strtotime($time);
+
+    if($future_time > $current_time) {
+        $diff_hours = ($future_time - $current_time)/3600;
+        $result_hours = str_pad(floor($diff_hours), 2, '0', STR_PAD_LEFT);
+        $result_minutes = str_pad(floor(($diff_hours-$result_hours)*60), 2, '0', STR_PAD_LEFT);
+    }
+    $result = [$result_hours, $result_minutes];
+    return $result;
+};

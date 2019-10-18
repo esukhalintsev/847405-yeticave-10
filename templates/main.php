@@ -27,8 +27,12 @@
                         <span class="lot__amount">Стартовая цена</span>
                         <span class="lot__cost"><?= clearStrDataTags(cut_price($good['price'])); ?></span>
                     </div>
-                    <div class="lot__timer timer">
-                        12:23
+                    <div class="lot__timer timer
+                        <?if((calculate_time($good['expiration']))[0] === '00'){
+                            print('timer--finishing');
+                            };
+                        ?>">
+                        <?= (calculate_time($good['expiration']))[0] . ':' . (calculate_time($good['expiration']))[1]; ?>
                     </div>
                 </div>
             </div>
